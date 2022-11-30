@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}Cart{% endblock %}
+  </head>
+  {% block content %}
+  <body>
+    <!-- https://mdbootstrap.com/docs/standard/extended/shopping-carts/#! -->
+    <section class="h-100 h-custom" style="background-color: #d2c9ff">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12">
+            <div
+              class="card card-registration card-registration-2"
+              style="border-radius: 15px"
+            >
+              <div class="card-body p-0">
+                <div class="row g-0">
+                  <div class="col-lg-8">
+                    <div class="p-5">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-5"
+                      >
+                        <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                      </div>
+                      <hr class="my-4" />
+                      {% for i in items_cart %}
+                      <div
+                        class="row mb-4 d-flex justify-content-between align-items-center"
+                      >
+                        <div class="col-md-2 col-lg-2 col-xl-2">
+                          <img
+                            src="{{i.image_url}}"
+                            class="img-fluid rounded-3"
+                            alt="{{i.name}}"
+                          />
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                          <h5 class="text-muted">{{i.category.capitalize}}</h5>
+                          <h5 class="text-black mb-0">{{i.name.capitalize}}</h5>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                            <form action="{% url 'update_cart' i.id %}" method="post">
+                              {% csrf_token %}
+                            <input
+                              id="form1"
+                              min="0"
+                              name="quantity"
+                              value="{{i.quantity}}"
+                              type="number"
+                              class="form-control form-control-sm"
+                            />
+                            <input class="btn btn-primary" type="submit" value="Update Quantity" />
+                          </form>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <div class="col-lg-4 bg-grey">
+                    <div class="p-5">
+                      <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                      <hr class="my-4">
+    
+                      <div class="d-flex justify-content-between mb-4">
+                        {% for i in items_cart %}
+                        <h5 class="text-capitalize">items: {{i.name}}</h5>
+                        <h5>$ {{i.sub_total}}</h5>
+                      </div>
+                      {% endfor %}
+                      <hr class="my-4">
+                      <div class="d-flex justify-content-between mb-5">
+                        <h5 class="text-capitalize">Total price</h5>
+                        <h5>$ {{total_cost}}</h5>
+                      </div>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <ul>
+      {% for i in items_cart %}
+      <li>{{i.name.capitalize}}: {{i.quantity}} - ${{i.sub_total}}</li>
+      {% endfor %}
+    </ul>
+    <h2>Total cost: ${{total_cost}}</h2> -->
+  </body>
+  {% endblock %}
+</html>

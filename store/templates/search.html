@@ -1,0 +1,16 @@
+{% extends 'layout.html'%}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block title %}Search{% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <div>
+      {% if unavailable %}
+      <h3>{{unavailable.capitalize}} Not Available</h3>
+      <img src="{{item_url}}" />
+    </div>
+    {% endif %} {% endblock %}
+  </body>
+</html>

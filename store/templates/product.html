@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+<head>
+  {% block title %}{{product.name.capitalize}}{% endblock %}
+</head>
+{% block content %}
+<body>
+  <div class="container">
+    <div class="col-lg-6 mb-4">
+      <div class="card" style="width: 100%">
+        <img
+          class="card-img-top"
+          src="{{product.image_url}}"
+          alt="{{product.name.capitalize}}"
+          style="width: 80%"
+        />
+        <div class="card-body">
+          <h5 class="card-title" id="item-name">{{product.name.capitalize}}</h5>
+          <p class="card-text">Category: {{product.category.capitalize}}</p>
+          <p class="card-text">Price: ${{product.cost}}</p>
+          <form
+            action="{% url 'cart_add' product.category product.id%}"
+            method="POST"
+          >
+            {% csrf_token %}
+            <input
+              type="text"
+              name="quantity"
+              placeholder="Quantity"
+              id="quantity"
+            />
+            <input class="btn btn-primary" type="submit" value="Add to Cart" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+      <div class="card">
+          <div class="card-body">
+              <h5 class="card-title">Current Items in Shopping Cart</h5>
+              {% for i in items_to_buy %}
+              <p class="card-text">
+                <a href="{% url 'products' i.category i.id %}">{{i.name.capitalize}}:</a> 
+                {{i.quantity}}
+              </p>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+</body>
+{% endblock %}
