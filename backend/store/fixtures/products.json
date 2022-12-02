@@ -1,0 +1,72 @@
+[
+  {
+    "model": "store.products",
+    "pk": 1,
+    "fields": {
+      "name": "chair",
+      "category": "furniture",
+      "image": "https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1687&q=80",
+      "cost": 20
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 2,
+    "fields": {
+      "name": "couch",
+      "category": "furniture",
+      "image": "https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1687&q=80",
+      "cost": 20
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 1,
+    "fields": {
+      "name": "chair",
+      "category": "furniture",
+      "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "cost": 100
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 3,
+    "fields": {
+      "name": "action figure",
+      "category": "toys",
+      "image": "https://images.unsplash.com/photo-1558507334-57300f59f0bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "cost": 10
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 4,
+    "fields": {
+      "name": "doll",
+      "category": "toys",
+      "image": "https://images.unsplash.com/photo-1613722913615-c6514f6c304e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "cost": 10
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 5,
+    "fields": {
+      "name": "tv",
+      "category": "electronics",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTu5fWZ8sLTvY2IXrtFL4KoUPeaw4LWom-DWHTGPOfdpx76mQUp6zCFxiahVwnA746yofQRV4tzzgj5JyIJkRszvdpZJhfL&usqp=CAc",
+      "cost": 500
+    }
+  },
+  {
+    "model": "store.products",
+    "pk": 6,
+    "fields": {
+      "name": "laptop",
+      "category": "electronics",
+      "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6500/6500646_sd.jpg;maxHeight=400;maxWidth=600",
+      "cost": 300
+    }
+  }
+]
