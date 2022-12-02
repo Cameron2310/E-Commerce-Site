@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { CartFill } from "react-bootstrap-icons";
 
 function NavBar({ props }) {
   const [categories, setCategories] = useState(() => {
@@ -32,6 +33,25 @@ function NavBar({ props }) {
                 );
               })}
             </NavDropdown>
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/shopping-cart/">
+              <CartFill />
+            </Nav.Link>
+
+            <form
+              action="/"
+              method="POST"
+              style={{
+                position: "absolute",
+                right: 0,
+                top: 0,
+                margin: "15px",
+                padding: 0,
+              }}
+            >
+              <input type="text" name="name" />
+              <input type="submit" name="submit" value="Search" />
+            </form>
           </Nav>
         </Navbar.Collapse>
       </Container>

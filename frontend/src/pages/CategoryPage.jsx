@@ -1,5 +1,5 @@
 // import { useParams } from "react-router-dom";
-import Product from "../assets/components/Product";
+import Product from "../components/Product";
 
 export default function CategoryPage({ props }) {
   return (
