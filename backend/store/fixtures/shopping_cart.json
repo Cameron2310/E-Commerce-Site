@@ -1,0 +1,18 @@
+[
+  {
+    "model": "store.shoppingcart",
+    "pk": 1,
+    "fields": {
+      "items": [1, 2, 3],
+      "user": 1
+    }
+  },
+  {
+    "model": "store.shoppingcart",
+    "pk": 2,
+    "fields": {
+      "items": [4, 5, 6],
+      "user": 2
+    }
+  }
+]

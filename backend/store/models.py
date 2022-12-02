@@ -23,3 +23,9 @@ class User(AbstractBaseUser):
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
+
+
+class ShoppingCart(models.Model):
+    items = models.ManyToManyField(Products)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='shoppingCarts')

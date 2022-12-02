@@ -44,7 +44,7 @@
     "model": "store.products",
     "pk": 5,
     "fields": {
-      "name": "TV",
+      "name": "Tv",
       "category": "Electronics",
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTu5fWZ8sLTvY2IXrtFL4KoUPeaw4LWom-DWHTGPOfdpx76mQUp6zCFxiahVwnA746yofQRV4tzzgj5JyIJkRszvdpZJhfL&usqp=CAc",
       "cost": 500
