@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { CartFill } from "react-bootstrap-icons";
 
 function NavBar({ props }) {
+  const [name, setName] = useState();
   const [categories, setCategories] = useState(() => {
     let arr = [];
     for (let i = 0; i < props.length; i++) {
@@ -15,6 +16,22 @@ function NavBar({ props }) {
     }
     return arr;
   });
+
+  function handleSubmit() {
+    const fetchId = () => {
+      const newName = name.charAt(0).toUpperCase() + name.slice(1);
+      const productId = props.filter((prop, i) => {
+        if (prop.name === newName) {
+          return props[i];
+        }
+      });
+      console.log(productId);
+      return productId[0];
+    };
+    const product = fetchId();
+    if (!product) window.location = "*";
+    else window.location = `/${product.category}/${product.id}/`;
+  }
 
   return (
     <Navbar bg="light" expand="lg">
@@ -38,9 +55,7 @@ function NavBar({ props }) {
               <CartFill />
             </Nav.Link>
 
-            <form
-              action="/"
-              method="POST"
+            <div
               style={{
                 position: "absolute",
                 right: 0,
@@ -49,9 +64,18 @@ function NavBar({ props }) {
                 padding: 0,
               }}
             >
-              <input type="text" name="name" />
-              <input type="submit" name="submit" value="Search" />
-            </form>
+              <input
+                type="text"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <input
+                type="submit"
+                name="submit"
+                value="Search"
+                onClick={handleSubmit}
+              />
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

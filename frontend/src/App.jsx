@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
-import NavBar from "./components/NavBar";
+import NotFound from "./pages/NotFound";
 import axios from "axios";
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
         <Route path="/login/" element={<LoginPage props={data} />} />
         <Route path="login/signup/" element={<SignUpPage />} />
         <Route path="/shopping-cart/" element={<ShoppingCartPage />} />
+        <Route path="*" element={<NotFound props={data} />} />
       </Routes>
     </Router>
   );
