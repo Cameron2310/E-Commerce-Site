@@ -1,9 +1,15 @@
+from django.shortcuts import HttpResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import *
 from .models import *
 
 # Create your views here.
+
+
+def index(request, *args, **kwargs):
+    index_file = open('./static/index.html').read()
+    return HttpResponse(index_file)
 
 
 class ProductsAPIView(APIView):

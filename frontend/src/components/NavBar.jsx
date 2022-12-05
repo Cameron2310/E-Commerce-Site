@@ -50,7 +50,7 @@ function NavBar({ props }) {
                 );
               })}
             </NavDropdown>
-            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/login/">Login</Nav.Link>
             <Nav.Link href="/shopping-cart/">
               <CartFill />
             </Nav.Link>

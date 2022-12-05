@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios("http://localhost:8000/");
+      const response = await axios("http://localhost:8000/products/");
       setData(response.data);
     };
     fetchData();
@@ -34,7 +34,7 @@ function App() {
         <Route path="/:category/:id/" element={<ProductPage props={data} />} />
         <Route path="/login/" element={<LoginPage props={data} />} />
         <Route path="login/signup/" element={<SignUpPage />} />
-        <Route path="/shopping-cart/" element={<ShoppingCartPage />} />
+        <Route path="/shopping-cart" element={<ShoppingCartPage />} />
         <Route path="*" element={<NotFound props={data} />} />
       </Routes>
     </Router>
